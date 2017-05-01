@@ -1,4 +1,5 @@
-git config --global credential.helper "cache --timeout=3600"
 git add -A
 git commit -am "lol, shenanigans."
-git push origin master --repo https://name:password@bitbucket.org/name/repo.git
+git push --repo https://Stinger21:password@github.com/Stinger21/Stinger21.github.io.git
+
+origin master

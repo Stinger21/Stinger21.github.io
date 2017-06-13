@@ -18,28 +18,9 @@
 			padding: 8px 12px;
 		}
 		
-		function readTextFile(file, callback)
-		{
-			var rawFile = new XMLHttpRequest();
-			rawFile.overrideMimeType("application/json");
-			rawFile.open("GET", file, true);
-			rawFile.onreadystatechange = function()
-			{
-				if (rawFile.readyState === 4 && rawFile.status == "200")
-				{
-					callback(rawFile.responseText);
-				}
-			}
-			rawFile.send(null);
-		}
-		
-		readTextFile("https://api.github.com/repos/Stinger21/Stinger21.github.io/contents/", function(text)
-		{
-			var data = JSON.parse(text);
-			console.log(data);
-		});
 	</style>
 </head>
+
 
 Hello
 <br/>
@@ -62,6 +43,7 @@ Currently making things @ <a href="http://hazelight.se/">http://hazelight.se/<a/
 <a href="http://steamcommunity.com/id/Paimail/">games?</a>
 <a href="https://github.com/Stinger21">code?</a>
 <br/>
+<img src="itsme.jpg"/>
 <img src="uv.jpg"/>
 <br/>
 NdotL
@@ -71,20 +53,46 @@ x*x
 <br/>
 <br/>
 
-Maya obj nuke <br/>
+<script>
+function readTextFile(file, callback)
+{
+	var rawFile = new XMLHttpRequest();
+	rawFile.overrideMimeType("application/json");
+	rawFile.open("GET", file, true);
+	rawFile.onreadystatechange = function()
+	{
+		if (rawFile.readyState === 4 && rawFile.status == "200")
+		{
+			callback(rawFile.responseText);
+		}
+	}
+	rawFile.send(null);
+}
 
-<textarea id="paste_code" class="paste_code" name="paste_code" onkeydown="return catchTab(this,event)">import maya.mel;
-from pymel.core import *;
-import maya.mel;
-import tempfile;
-path = (str(tempfile.gettempdir()) + '/obj.obj').replace("\\", "/");
+console.log("Helo Bouse");
+	
+readTextFile("https://api.github.com/repos/Stinger21/Stinger21.github.io/contents/scripts", function(text)
+{
+	var data = JSON.parse(text);
+	for (i in data)
+	{
+		if(data[i].type == "file")
+		{
+			var FilePath = data[i].download_url
+			readTextFile(FilePath, function(FileContents)
+			{
+				document.getElementById('SomethingSomething').innerHTML += data[i].download_url.replace(/^.*[\\\/]/, '')
+				
+				var html_to_add = '<textarea id="paste_code" class="paste_code" name="paste_code" onkeydown="return catchTab(this,event)">';
+				html_to_add += FileContents
+				html_to_add += '</textarea>';
+				
+				document.getElementById('SomethingSomething').innerHTML += html_to_add;
+			});
+			
+			
+		}
+	}
+});
 
-if(len(ls(sl=True)) == 0):
-    print "Nothing Selected";
-    sys.exit();
-
-oldMesh = ls(sl=True)[0];
-select(oldMesh);
-maya.mel.eval('file -force -options "groups=0;ptgroups=0;materials=0;smoothing=0;normals=1" -typ "OBJexport" -pr -es "'+path+'";');
-newMesh = maya.mel.eval('file -import -type "OBJ" -returnNewNodes -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "obj" -options "mo=1"  -pr "'+path+'";');
-delete(oldMesh);</textarea>
+</script>

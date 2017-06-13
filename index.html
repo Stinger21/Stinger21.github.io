@@ -10,10 +10,10 @@
 			display: block;
 			font-family: Consolas,Menlo,Monaco,"Lucida Console","Liberation Mono","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace,serif;
 			font-size: 13px;
-			height: 200px;
-			min-height: 200px;
+			height: 175px;
+			min-height: 175px;
 			line-height: 21px;
-			width: 100%;
+			width: 75%;
 			margin: 0;
 			padding: 8px 12px;
 		}
@@ -57,7 +57,7 @@ x*x
 
 
 <script>
-function readTextFile(file, callback)
+function readTextFile(file, otherVal, callback) // otherVal is a utility value to feed straight through.
 {
 	var rawFile = new XMLHttpRequest();
 	rawFile.overrideMimeType("application/json");
@@ -66,36 +66,37 @@ function readTextFile(file, callback)
 	{
 		if (rawFile.readyState === 4 && rawFile.status == "200")
 		{
-			callback(rawFile.responseText);
+			callback(rawFile.responseText, otherVal);
 		}
 	}
 	rawFile.send(null);
 }
 
-console.log("Helo Bouse");
-	
-readTextFile("https://api.github.com/repos/Stinger21/Stinger21.github.io/contents/scripts", function(text)
+filepaths = [];
+
+readTextFile("https://api.github.com/repos/Stinger21/Stinger21.github.io/contents/scripts", 32, function(text, otherVal)
 {
 	var data = JSON.parse(text);
 	for (i in data)
 	{
 		if(data[i].type == "file")
 		{
-			var FilePath = data[i].download_url
-			readTextFile(FilePath, function(FileContents)
+			//var FilePath = data[i].download_url
+			//filepaths.push();
+			
+			readTextFile(data[i].download_url, i, function(FileContents, otherVal)
 			{
-				document.getElementById('SomethingSomething').innerHTML += data[i].download_url.replace(/^.*[\\\/]/, '').replace(/%20/g, ' ').replace('.py', '')
+				var html_to_add = "";
 				
-				var html_to_add = '<textarea id="paste_code" class="paste_code" name="paste_code" onkeydown="return catchTab(this,event)">';
-				html_to_add += FileContents
+				html_to_add +=  "<br/><br/>";
+				html_to_add +=  data[otherVal].download_url.replace(/^.*[\\\/]/, '').replace(/%20/g, ' ').replace('.py', '');
+				html_to_add += '<textarea id="paste_code" class="paste_code" name="paste_code" onkeydown="return catchTab(this,event)">';
+				html_to_add += FileContents;
 				html_to_add += '</textarea>';
 				
 				document.getElementById('SomethingSomething').innerHTML += html_to_add;
 			});
-			
-			
 		}
 	}
 });
-
 </script>

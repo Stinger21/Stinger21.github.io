@@ -1,3 +1,25 @@
+<head>
+	<style type="text/css">
+textarea.paste_code, textarea.paste_textarea {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-sizing: border-box;
+    display: block;
+    font-family: Consolas,Menlo,Monaco,"Lucida Console","Liberation Mono","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace,serif;
+    font-size: 13px;
+    height: 200px;
+    min-height: 200px;
+    line-height: 21px;
+    width: 100%;
+    margin: 0;
+    padding: 8px 12px;
+}
+	</style>
+</head>
+
+
 Hello<br/>
 <!--<img src="itsme.jpg"/>-->
 <!--I CAN TELL BY THE PIXELS-->
@@ -22,17 +44,19 @@ x*x<br/>
 <br/>
 
 Maya obj nuke <br/>
-<div style="height:120px; width:420px; border:1px solid #ccc; overflow:auto;">
-from pymel.core import *
-import maya.mel
-path = 'C:/obj.obj'
+
+<textarea id="paste_code" class="paste_code" name="paste_code" onkeydown="return catchTab(this,event)">import maya.mel;
+from pymel.core import *;
+import maya.mel;
+import tempfile;
+path = (str(tempfile.gettempdir()) + '/obj.obj').replace("\\", "/");
+
+if(len(ls(sl=True)) == 0):
+    print "Nothing Selected";
+    sys.exit();
 
 oldMesh = ls(sl=True)[0];
-
 select(oldMesh);
 maya.mel.eval('file -force -options "groups=0;ptgroups=0;materials=0;smoothing=0;normals=1" -typ "OBJexport" -pr -es "'+path+'";');
-newMesh = maya.mel.eval('file -import -type "OBJ" -returnNewNodes -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "obj" -options "mo=1"  -pr "'+path+'";')
-delete(oldMesh);
-
-</div>
-
+newMesh = maya.mel.eval('file -import -type "OBJ" -returnNewNodes -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "obj" -options "mo=1"  -pr "'+path+'";');
+delete(oldMesh);</textarea>

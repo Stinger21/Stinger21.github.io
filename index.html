@@ -53,6 +53,9 @@ x*x
 <br/>
 <br/>
 
+<div id="SomethingSomething"> </div>
+
+
 <script>
 function readTextFile(file, callback)
 {
@@ -81,7 +84,7 @@ readTextFile("https://api.github.com/repos/Stinger21/Stinger21.github.io/content
 			var FilePath = data[i].download_url
 			readTextFile(FilePath, function(FileContents)
 			{
-				document.getElementById('SomethingSomething').innerHTML += data[i].download_url.replace(/^.*[\\\/]/, '')
+				document.getElementById('SomethingSomething').innerHTML += data[i].download_url.replace(/^.*[\\\/]/, '').replace('%20', ' ').replace('%20', ' ').replace('.py', '')
 				
 				var html_to_add = '<textarea id="paste_code" class="paste_code" name="paste_code" onkeydown="return catchTab(this,event)">';
 				html_to_add += FileContents

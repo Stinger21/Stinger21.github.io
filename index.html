@@ -27,8 +27,7 @@ Hello<br/>
 Gamedev<br/>
 Technical Artist<br/>
 <br/>
-sign me up for spam mail :D<br/>
-me@mattwestphal.com<br/>
+me@mattwestphal.com (actually works now)<br/>
 <br/>
 Currently making things @ <a href="http://hazelight.se/">http://hazelight.se/<a/><br/>
 <br/>
@@ -39,7 +38,9 @@ Currently making things @ <a href="http://hazelight.se/">http://hazelight.se/<a/
 <img src="itsme.jpg"/>
 <img src="uv.jpg"/>
 <br/>
-NdotL
+<p>N&bull;L
+This is not a portfolio.
+</p>
 <div id="SomethingSomething"> </div>
 <script>
 function readTextFile(file, otherVal, callback) // otherVal is a utility value to feed straight through.
@@ -74,7 +75,7 @@ readTextFile("https://api.github.com/repos/Stinger21/Stinger21.github.io/content
 				var html_to_add = "";
 				
 				html_to_add +=  "<br/>";
-				html_to_add +=  data[otherVal].download_url.replace(/^.*[\\\/]/, '').replace(/%20/g, ' ').replace('.py', '');
+				html_to_add +=  data[otherVal].download_url.replace(/^.*[\\\/]/, '').replace(/%20/g, ' ');
 				html_to_add += '<textarea id="paste_code" class="paste_code" name="paste_code" onkeydown="return catchTab(this,event)">';
 				html_to_add += FileContents;
 				html_to_add += '</textarea>';

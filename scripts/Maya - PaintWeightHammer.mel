@@ -1,0 +1,14 @@
+global proc vertexHammerPaint( string $context ){
+artUserPaintCtx -e
+-initializeCmd "InitVertexBrush"
+-finalizeCmd "finishVertexBrush"
+-setValueCommand "setVertexValueCmd"
+$context;}
+global proc InitVertexBrush(string $name){return;}
+global proc finishVertexBrush( int $slot ){}
+global proc setVertexValueCmd(int $slot, int $index, float $val){
+string $sel[] = `ls -sl`;
+select -r ($sel[0] + ".vtx[" + $index + "]");
+weightHammerVerts;
+select $sel[0];}
+ScriptPaintTool; artUserPaintCtx -e -toolSetupCmd "vertexHammerPaint" `currentCtx`;

@@ -30,7 +30,7 @@ var BoneMatrecies
 var modelVertices
 function InitDemo()
 {
-    loadTextResource('/scripts/shader.glsl.html', function (shaderErr, shaderText)
+    loadTextResource('/webgl/shader.glsl.html', function (shaderErr, shaderText)
     {
         if(shaderErr)
         {
@@ -64,7 +64,7 @@ function InitDemo()
                 console.error(shaderErr);
                 return
             }
-            loadJSONResource('/scripts/hurricane.json', function (modelErr, modelObj)
+            loadJSONResource('/webgl/hurricane.json', function (modelErr, modelObj)
             {
                 if(modelErr)
                 {
@@ -75,7 +75,7 @@ function InitDemo()
                 else
                 {
                     model = modelObj
-                    loadImage("/scripts/hurricane.png", function (imageErr, imageObj)
+                    loadImage("/webgl/hurricane.png", function (imageErr, imageObj)
                     {
                         if (imageErr)
                         {

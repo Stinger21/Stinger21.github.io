@@ -312,7 +312,7 @@ function RunDemo(vertexShaderText, fragmentShaderText, model, Texture)
         }
         
         viewMatrix = Matrix4x4.LookAt(cameraTransform.position, Vector3.addVector3(cameraTransform.position, cameraTransform.forward()), cameraTransform.up());//Matrix4x4.Multiply(cameraRotationMatrix, cameraTranslationMatrix)
-        projMatrix = Matrix4x4.Perspective(50, canvas.width / canvas.height, 0.1, 1000.0)
+        projMatrix = Matrix4x4.Perspective(30, canvas.width / canvas.height, 0.1, 1000.0)
 
         gl.uniformMatrix4fv(matViewUniformLocation, gl.FALSE, viewMatrix);
         gl.uniformMatrix4fv(matProjUniformLocation, gl.FALSE, projMatrix);

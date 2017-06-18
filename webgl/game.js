@@ -7,7 +7,7 @@
 function include(destination)
 {
     var e = window.document.createElement('script');
-    e.setAttribute('src', destination);
+    e.setAttribute('src', PathOffset + destination);
     window.document.body.appendChild(e);
 }
 include('engine/make_javascript_less_shit.js');

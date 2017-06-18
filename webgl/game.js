@@ -319,7 +319,9 @@ function RunDemo(vertexShaderText, fragmentShaderText, model, Texture)
 
 
 
-        gl.clearColor(0.390625, 0.58203125, 0.92578125, 1.0);
+        gl.clearColor(0.390625, 0.582031, 0.925781, 1.0);
+        gl.clearColor(0.141176, 0.141176, 0.141176, 1.0);
+		
         gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 
         gl.bindTexture(gl.TEXTURE_2D, modeTexture);

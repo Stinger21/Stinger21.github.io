@@ -5,7 +5,7 @@
 		<meta charset="utf-8" />
 	</head>
 	
-	<body onload="InitDemo()">
+	<body>
 
 		<canvas id="GameCanvas" width="320" height="320">
 			If you see this you are running a browser which does not support canvases.
@@ -15,5 +15,13 @@
 		<p id="debugString">debug</p>
 		
 		<script src="game.js"></script>
+		<script>
+		document.onreadystatechange = function()
+		{
+			 if(document.readyState === 'complete'){
+				InitDemo()
+			 }
+		}
+		</script>
 	</body>
 </html>

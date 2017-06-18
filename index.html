@@ -41,7 +41,7 @@
 	</style>
 </head>
 
-<body>
+<body onload="InitDemo()">
 	Hello<br/>
 	<!--<img src="itsme.jpg"/>-->
 	<!--I CAN TELL BY THE PIXELS-->
@@ -65,7 +65,15 @@
 	<a href="imageDeCap.exe" >Microsoft Windows™ Digital App™ for Windows 7/8/10/11</a>
 	insert 90's meme here
 	</p>
-	<div id="SomethingSomething"> </div>
+	
+	<canvas id="GameCanvas" width="320" height="320">
+		If you see this you are running a browser which does not support canvases.
+		you should reconsider some life-choices.
+	</canvas>
+	<p id="debugString">debug</p>
+	<script src="game.js"></script>
+	
+	<div id="MyScripts"> </div>
 </body>
 
 <script>
@@ -106,7 +114,7 @@ readTextFile("https://api.github.com/repos/Stinger21/Stinger21.github.io/content
 				html_to_add += FileContents;
 				html_to_add += '</textarea>';
 				
-				document.getElementById('SomethingSomething').innerHTML += html_to_add;
+				document.getElementById('MyScripts').innerHTML += html_to_add;
 			});
 		}
 	}

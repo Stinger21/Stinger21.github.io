@@ -1,0 +1,768 @@
+{
+	 "rootnode": {
+		 "name": "skinned"
+		,"transformation": [
+			 0.01
+			,0
+			,0
+			,0
+			,0
+			,0.01
+			,0
+			,0
+			,0
+			,0
+			,0.01
+			,0
+			,0
+			,0
+			,0
+			,1
+		]
+		,"children": [
+			{
+				 "name": "pPlane1"
+				,"transformation": [
+					 1
+					,0
+					,0
+					,0
+					,0
+					,1
+					,0
+					,0
+					,0
+					,0
+					,1
+					,0
+					,0
+					,0
+					,0
+					,1
+				]
+				,"meshes": [
+					 0
+				]
+			}
+			,{
+				 "name": "joint1"
+				,"transformation": [
+					 0
+					,0
+					,1
+					,-0.5
+					,0
+					,1
+					,0
+					,0
+					,-1
+					,0
+					,0
+					,0.5
+					,0
+					,0
+					,0
+					,1
+				]
+				,"children": [
+					{
+						 "name": "joint2"
+						,"transformation": [
+							 0
+							,0
+							,-1
+							,1
+							,0
+							,1
+							,0
+							,0
+							,1
+							,0
+							,0
+							,0
+							,0
+							,0
+							,0
+							,1
+						]
+						,"children": [
+							{
+								 "name": "joint3"
+								,"transformation": [
+									 0
+									,0
+									,-1
+									,1
+									,0
+									,1
+									,0
+									,0
+									,1
+									,0
+									,0
+									,0
+									,0
+									,0
+									,0
+									,1
+								]
+								,"children": [
+									{
+										 "name": "joint4"
+										,"transformation": [
+											 0
+											,0
+											,1
+											,1
+											,0
+											,1
+											,0
+											,0
+											,-1
+											,0
+											,0
+											,0
+											,0
+											,0
+											,0
+											,1
+										]
+									}
+								]
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+	,"flags": 8
+	,"meshes": [
+		{
+			 "name": "pPlane1Mesh"
+			,"materialindex": 0
+			,"primitivetypes": 4
+			,"vertices": [
+				 -0.5
+				,-0
+				,0.5
+				,0.5
+				,-0
+				,0.5
+				,-0.5
+				,0
+				,-0.5
+				,0.5
+				,0
+				,-0.5
+			]
+			,"normals": [
+				 0
+				,1
+				,0
+				,-0
+				,1
+				,0
+				,-0
+				,1
+				,0
+				,-0
+				,1
+				,0
+			]
+			,"tangents": [
+				 1
+				,0
+				,0
+				,1
+				,0
+				,0
+				,1
+				,0
+				,0
+				,1
+				,0
+				,0
+			]
+			,"bitangents": [
+				 0
+				,0
+				,1
+				,0
+				,0
+				,1
+				,0
+				,0
+				,1
+				,0
+				,0
+				,1
+			]
+			,"numuvcomponents": [
+				 2
+			]
+			,"texturecoords": [
+				[
+					 0
+					,0
+					,1
+					,0
+					,0
+					,1
+					,1
+					,1
+				]
+			]
+			,"bones": [
+				{
+					 "name": "joint1"
+					,"offsetmatrix": [
+						 0
+						,0
+						,-1
+						,0.5
+						,0
+						,1
+						,-0
+						,0
+						,1
+						,0
+						,0
+						,0.5
+						,0
+						,0
+						,0
+						,1
+					]
+					,"weights": [
+						[
+							 0
+							,0.5
+						]
+					]
+				}
+				,{
+					 "name": "joint2"
+					,"offsetmatrix": [
+						 1
+						,0
+						,0
+						,0.5
+						,0
+						,1
+						,0
+						,0
+						,0
+						,0
+						,1
+						,0.5
+						,0
+						,0
+						,0
+						,1
+					]
+					,"weights": [
+						[
+							 2
+							,1
+						]
+					]
+				}
+				,{
+					 "name": "joint3"
+					,"offsetmatrix": [
+						 0
+						,0
+						,1
+						,0.5
+						,0
+						,1
+						,-0
+						,0
+						,-1
+						,0
+						,0
+						,0.5
+						,0
+						,0
+						,0
+						,1
+					]
+					,"weights": [
+						[
+							 3
+							,1
+						]
+					]
+				}
+				,{
+					 "name": "joint4"
+					,"offsetmatrix": [
+						 1
+						,0
+						,0
+						,-0.5
+						,0
+						,1
+						,0
+						,0
+						,0
+						,0
+						,1
+						,-0.5
+						,0
+						,0
+						,0
+						,1
+					]
+					,"weights": [
+						[
+							 0
+							,0.5
+						]
+						,[
+							 1
+							,1
+						]
+					]
+				}
+			]
+			,"faces": [
+				[
+					 0
+					,1
+					,2
+				]
+				,[
+					 2
+					,1
+					,3
+				]
+			]
+		}
+	]
+	,"materials": [
+		{
+			 "properties": [
+				{
+					 "key": "?mat.name"
+					,"semantic": 0
+					,"index": 0
+					,"type": 3
+					,"value": "lambert2"
+				}
+				,{
+					 "key": "$mat.shadingm"
+					,"semantic": 0
+					,"index": 0
+					,"type": 4
+					,"value": 2
+				}
+				,{
+					 "key": "$mat.twosided"
+					,"semantic": 0
+					,"index": 0
+					,"type": 4
+					,"value": 0
+				}
+				,{
+					 "key": "$mat.wireframe"
+					,"semantic": 0
+					,"index": 0
+					,"type": 4
+					,"value": 0
+				}
+				,{
+					 "key": "$clr.ambient"
+					,"semantic": 0
+					,"index": 0
+					,"type": 1
+					,"value": [
+						 0
+						,0
+						,0
+						,1
+					]
+				}
+				,{
+					 "key": "$clr.diffuse"
+					,"semantic": 0
+					,"index": 0
+					,"type": 1
+					,"value": [
+						 0.6
+						,0.6
+						,0.6
+						,1
+					]
+				}
+				,{
+					 "key": "$clr.specular"
+					,"semantic": 0
+					,"index": 0
+					,"type": 1
+					,"value": [
+						 0.4
+						,0.4
+						,0.4
+						,1
+					]
+				}
+				,{
+					 "key": "$clr.emissive"
+					,"semantic": 0
+					,"index": 0
+					,"type": 1
+					,"value": [
+						 0
+						,0
+						,0
+						,1
+					]
+				}
+				,{
+					 "key": "$clr.transparent"
+					,"semantic": 0
+					,"index": 0
+					,"type": 1
+					,"value": [
+						 0
+						,0
+						,0
+						,1
+					]
+				}
+				,{
+					 "key": "$clr.reflective"
+					,"semantic": 0
+					,"index": 0
+					,"type": 1
+					,"value": [
+						 0
+						,0
+						,0
+						,0
+					]
+				}
+				,{
+					 "key": "$mat.shininess"
+					,"semantic": 0
+					,"index": 0
+					,"type": 1
+					,"value": 10
+				}
+				,{
+					 "key": "$mat.reflectivity"
+					,"semantic": 0
+					,"index": 0
+					,"type": 1
+					,"value": 1
+				}
+				,{
+					 "key": "$mat.refracti"
+					,"semantic": 0
+					,"index": 0
+					,"type": 1
+					,"value": 1
+				}
+				,{
+					 "key": "$tex.file"
+					,"semantic": 1
+					,"index": 0
+					,"type": 3
+					,"value": "C:/Users/Stinger/Documents/Visual Studio 2015/Projects/quote/quote/scripts/Hurricane.png"
+				}
+				,{
+					 "key": "$tex.mapmodeu"
+					,"semantic": 1
+					,"index": 0
+					,"type": 4
+					,"value": 0
+				}
+				,{
+					 "key": "$tex.mapmodev"
+					,"semantic": 1
+					,"index": 0
+					,"type": 4
+					,"value": 0
+				}
+				,{
+					 "key": "$tex.uvtrafo"
+					,"semantic": 1
+					,"index": 0
+					,"type": 1
+					,"value": [
+						 0
+						,0
+						,1
+						,1
+						,0
+					]
+				}
+				,{
+					 "key": "$tex.blend"
+					,"semantic": 1
+					,"index": 0
+					,"type": 1
+					,"value": 1
+				}
+				,{
+					 "key": "$tex.uvwsrc"
+					,"semantic": 1
+					,"index": 0
+					,"type": 4
+					,"value": 0
+				}
+			]
+		}
+	]
+	,"animations": [
+		{
+			 "name": "combinedAnim_0"
+			,"tickspersecond": 1
+			,"duration": 0.208333
+			,"channels": [
+				{
+					 "name": "joint1"
+					,"prestate": 0
+					,"poststate": 0
+					,"positionkeys": [
+						[
+							 0.041667
+							,[
+								 -0.5
+								,0
+								,0.5
+							]
+						]
+						,[
+							 0.083333
+							,[
+								 -1
+								,0
+								,0.5
+							]
+						]
+						,[
+							 0.125
+							,[
+								 -1
+								,0
+								,0.5
+							]
+						]
+						,[
+							 0.166667
+							,[
+								 -0.5
+								,0
+								,0.5
+							]
+						]
+						,[
+							 0.208333
+							,[
+								 -0.5
+								,0
+								,0.5
+							]
+						]
+					]
+					,"rotationkeys": [
+						[
+							 0.041667
+							,[
+								 0.707107
+								,0
+								,0.707107
+								,0
+							]
+						]
+					]
+					,"scalingkeys": [
+						[
+							 0.041667
+							,[
+								 1
+								,1
+								,1
+							]
+						]
+					]
+				}
+				,{
+					 "name": "joint2"
+					,"prestate": 0
+					,"poststate": 0
+					,"positionkeys": [
+						[
+							 0.041667
+							,[
+								 1
+								,0
+								,0
+							]
+						]
+						,[
+							 0.083333
+							,[
+								 1
+								,0
+								,0.5
+							]
+						]
+						,[
+							 0.125
+							,[
+								 1.5
+								,0
+								,0.5
+							]
+						]
+						,[
+							 0.166667
+							,[
+								 1
+								,0
+								,0
+							]
+						]
+						,[
+							 0.208333
+							,[
+								 1
+								,0
+								,0
+							]
+						]
+					]
+					,"rotationkeys": [
+						[
+							 0.041667
+							,[
+								 0.707107
+								,0
+								,-0.707107
+								,0
+							]
+						]
+					]
+					,"scalingkeys": [
+						[
+							 0.041667
+							,[
+								 1
+								,1
+								,1
+							]
+						]
+					]
+				}
+				,{
+					 "name": "joint3"
+					,"prestate": 0
+					,"poststate": 0
+					,"positionkeys": [
+						[
+							 0.041667
+							,[
+								 1
+								,0
+								,0
+							]
+						]
+					]
+					,"rotationkeys": [
+						[
+							 0.041667
+							,[
+								 0.707107
+								,0
+								,-0.707107
+								,0
+							]
+						]
+					]
+					,"scalingkeys": [
+						[
+							 0.041667
+							,[
+								 1
+								,1
+								,1
+							]
+						]
+					]
+				}
+				,{
+					 "name": "joint4"
+					,"prestate": 0
+					,"poststate": 0
+					,"positionkeys": [
+						[
+							 0.041667
+							,[
+								 1
+								,0
+								,0
+							]
+						]
+						,[
+							 0.083333
+							,[
+								 1
+								,0
+								,-0.5
+							]
+						]
+						,[
+							 0.125
+							,[
+								 1.5
+								,0
+								,-0.5
+							]
+						]
+						,[
+							 0.166667
+							,[
+								 1
+								,0
+								,-0.5
+							]
+						]
+						,[
+							 0.208333
+							,[
+								 1
+								,0
+								,0
+							]
+						]
+					]
+					,"rotationkeys": [
+						[
+							 0.041667
+							,[
+								 0.707107
+								,0
+								,0.707107
+								,0
+							]
+						]
+					]
+					,"scalingkeys": [
+						[
+							 0.041667
+							,[
+								 1
+								,1
+								,1
+							]
+						]
+					]
+				}
+			]
+		}
+	]
+}

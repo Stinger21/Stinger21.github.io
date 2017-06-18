@@ -144,6 +144,6 @@ function Initialize()
 function Update()
 {
     plane1.transform.rotate(0, 20 * Time.deltaTime, 0)
-    plane2.transform.rotate(0, -20 * Time.deltaTime, 0)
-    plane3.transform.rotate(0, 20 * Time.deltaTime, 0)
+    //plane2.transform.rotate(0, -20 * Time.deltaTime, 0)
+    //plane3.transform.rotate(0, 20 * Time.deltaTime, 0)
 }

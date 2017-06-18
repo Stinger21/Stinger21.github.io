@@ -41,7 +41,7 @@
 	</style>
 </head>
 
-<body onload="InitDemo()">
+<body>
 	Hello<br/>
 	<!--<img src="itsme.jpg"/>-->
 	<!--I CAN TELL BY THE PIXELS-->
@@ -72,7 +72,15 @@
 	</canvas>
 	<p id="debugString">debug</p>
 	<script src="game.js"></script>
-	
+	<script>
+		document.onreadystatechange = function()
+		{
+			 if(document.readyState === 'complete')
+			 {
+				InitDemo()
+			 }
+		}
+	</script>
 	<div id="MyScripts"> </div>
 </body>
 

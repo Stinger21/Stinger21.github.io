@@ -118,25 +118,27 @@ function Initialize()
     mainCamera = new Camera();
     mainCamera.transform.position = new Vector3(0, 3, -6);
     mainCamera.transform.rotation = Quaternion.Euler(0, 0, 30);
+	
     console.log("Initialize");
+	
     plane1 = new planeEntity();
     plane1.transform.position = new Vector3(0, 0, 0);
 
-    plane2 = new planeEntity();
-    plane2.transform.position = new Vector3(4, 0, 0);
-    plane2.transform.scale = new Vector3(0.5, 0.5, 0.5)
-    plane2.transform.parent = plane1.transform;
-
-
-    plane3 = new planeEntity();
-    plane3.transform.position = new Vector3(4, 0, 0);
-    plane3.transform.scale = new Vector3(0.25, 0.25, 0.25)
-    plane3.transform.parent = plane2.transform;
-
-    plane4 = new planeEntity();
-    plane4.transform.position = new Vector3(4, 0, 0);
-    plane4.transform.scale = new Vector3(0.2, 0.2, 0.2)
-    plane4.transform.parent = plane3.transform;
+    //plane2 = new planeEntity();
+    //plane2.transform.position = new Vector3(4, 0, 0);
+    //plane2.transform.scale = new Vector3(0.5, 0.5, 0.5)
+    //plane2.transform.parent = plane1.transform;
+    //
+    //
+    //plane3 = new planeEntity();
+    //plane3.transform.position = new Vector3(4, 0, 0);
+    //plane3.transform.scale = new Vector3(0.25, 0.25, 0.25)
+    //plane3.transform.parent = plane2.transform;
+    //
+    //plane4 = new planeEntity();
+    //plane4.transform.position = new Vector3(4, 0, 0);
+    //plane4.transform.scale = new Vector3(0.2, 0.2, 0.2)
+    //plane4.transform.parent = plane3.transform;
 }
 
 function Update()

@@ -95,9 +95,6 @@ function InitDemo()
         }
     })
 }
-http://www.mattwestphal.com/webgl/Hurricane.png
-http://www.mattwestphal.com/webgl/hurricane.png
-
 function makeAttribute(program, data, elementsPerAttribute, attributeName)
 {
     console.log(attributeName)

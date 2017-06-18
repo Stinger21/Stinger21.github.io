@@ -75,7 +75,7 @@ function InitDemo()
                 else
                 {
                     model = modelObj
-                    loadImage("/webgl/hurricane.png", function (imageErr, imageObj)
+                    loadImage("/webgl/Hurricane.png", function (imageErr, imageObj)
                     {
                         if (imageErr)
                         {
@@ -95,6 +95,9 @@ function InitDemo()
         }
     })
 }
+http://www.mattwestphal.com/webgl/Hurricane.png
+http://www.mattwestphal.com/webgl/hurricane.png
+
 function makeAttribute(program, data, elementsPerAttribute, attributeName)
 {
     console.log(attributeName)

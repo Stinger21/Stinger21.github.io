@@ -116,7 +116,7 @@ window.onblur = function () { isActive = false; }
 function Initialize()
 {
     mainCamera = new Camera();
-    mainCamera.transform.position = new Vector3(0, 4, -6);
+    mainCamera.transform.position = new Vector3(0, 3.8, -6);
     mainCamera.transform.rotation = Quaternion.Euler(0, 0, 30);
 	
     console.log("Initialize");

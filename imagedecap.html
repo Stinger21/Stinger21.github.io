@@ -1,0 +1,138 @@
+<head>
+	<style type="text/css">
+		textarea.paste_code, textarea.paste_textarea
+		{
+			//background-color: #fff;
+			color: #fff;
+			background-color: #242424;
+			border: 1px solid #ddd;
+			border-radius: 3px;
+			box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+			box-sizing: border-box;
+			display: block;
+			font-family: Consolas,Menlo,Monaco,"Lucida Console","Liberation Mono","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace,serif;
+			font-size: 13px;
+			height: 175px;
+			min-height: 175px;
+			line-height: 21px;
+			width: 40%;
+			margin: 0;
+			padding: 8px 12px;
+		}
+		body
+		{
+			background-color: #242424;
+			color: #8c8c8c;
+			
+			
+		}
+		h1, h2, h3
+		{
+			color: c4c4c4;
+		}
+		h4
+		{
+			color: c4c4c4;
+			font-size: 10%;
+		}
+		/* unvisited link */
+		a:link {color: 6c84da;}
+		/* visited link */
+		a:visited {color: 6c84da;}
+		/* mouse over link */
+		a:hover {color: 3a4c8c;}
+		/* selected link */
+		a:active {color: 3a4c8c;}
+	</style>
+</head>
+
+<body>
+	Hello<br/>
+	<!--<img src="itsme.jpg"/>-->
+	<!--I CAN TELL BY THE PIXELS-->
+	Gamedev<br/>
+	Technical Artist<br/>
+	<br/>
+	me@mattwestphal.com (actually works now)<br/>
+	<br/>
+	Currently making things @ <a href="http://hazelight.se/">http://hazelight.se/<a/><br/>
+	<img src="logo.gif"/>
+	<br/>
+	<a href="https://github.com/Stinger21">look at my wonky code?</a><br/>
+	<a href="http://steamcommunity.com/id/Paimail/">play games?</a><br/>
+	<a href="https://www.youtube.com/channel/UCyeH4DRL7Ik2oJ3Czsn2Elg">watch videos?</a><br/>
+	<br/>
+	<img src="itsme.jpg"/>
+	<canvas id="GameCanvas" width="300" height="150">
+		If you see this you are running a browser which does not support canvases :v.
+	</canvas>
+	Not a gif
+	<br/>
+	<h4 id="debugString">debug</h4>
+	<p><!--N&bull;L-->
+	This is not a portfolio.<br/>
+	<br/>
+	<a href="imageDeCap.exe" >Download Image Decap Here!!</a>
+	<br/>
+	<a href="imageDeCap.exe" >Microsoft Windows™ Digital App™ for Windows 7/8/10/11</a>
+	insert 90's meme here
+	</p>
+	
+	<script>var PathOffset = "webgl/"</script>
+	<script src="webgl/game.js"></script>
+	<script>
+		document.onreadystatechange = function()
+		{
+			 if(document.readyState === 'complete')
+			 {
+				InitDemo()
+			 }
+		}
+	</script>
+	<div id="MyScripts"> </div>
+</body>
+
+<script>
+function readTextFile(file, otherVal, callback) // otherVal is a utility value to feed straight through.
+{
+	var rawFile = new XMLHttpRequest();
+	rawFile.overrideMimeType("application/json");
+	rawFile.open("GET", file, true);
+	rawFile.onreadystatechange = function()
+	{
+		if (rawFile.readyState === 4 && rawFile.status == "200")
+		{
+			callback(rawFile.responseText, otherVal);
+		}
+	}
+	rawFile.send(null);
+}
+
+filepaths = [];
+
+readTextFile("https://api.github.com/repos/Stinger21/Stinger21.github.io/contents/scripts", 32, function(text, otherVal)
+{
+	var data = JSON.parse(text);
+	for (i in data)
+	{
+		if(data[i].type == "file")
+		{
+			//var FilePath = data[i].download_url
+			//filepaths.push();
+			
+			readTextFile(data[i].download_url, i, function(FileContents, otherVal)
+			{
+				var html_to_add = "";
+				
+				html_to_add +=  "<br/>";
+				html_to_add +=  "<h3>" + data[otherVal].download_url.replace(/^.*[\\\/]/, '').replace(/%20/g, ' ') + "</h3>"
+				html_to_add += '<textarea id="paste_code" class="paste_code" name="paste_code" onkeydown="return catchTab(this,event)">';
+				html_to_add += FileContents;
+				html_to_add += '</textarea>';
+				
+				document.getElementById('MyScripts').innerHTML += html_to_add;
+			});
+		}
+	}
+});
+</script>

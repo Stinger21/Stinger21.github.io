@@ -34,7 +34,7 @@ function InitDemo()
     {
         if(shaderErr)
         {
-            alert('Fatal error getting shader');
+            ////alert('Fatal error getting shader');
             console.error(shaderErr);
             return
         }
@@ -60,7 +60,7 @@ function InitDemo()
             }
             if (vsText == "" || fsText == "")
             {
-                alert('Fatal error reading shader');
+                //alert('Fatal error reading shader');
                 console.error(shaderErr);
                 return
             }
@@ -68,7 +68,7 @@ function InitDemo()
             {
                 if(modelErr)
                 {
-                    alert('Fatal error getting model');
+                    //alert('Fatal error getting model');
                     console.error(fsErr);
                     return
                 }
@@ -79,7 +79,7 @@ function InitDemo()
                     {
                         if (imageErr)
                         {
-                            alert('Fatal error getting texture');
+                            //alert('Fatal error getting texture');
                             console.error(imageErr);
                             return
                         }
@@ -122,7 +122,7 @@ function RunDemo(vertexShaderText, fragmentShaderText, model, Texture)
         console.error("webgl not supported, falling back on experimental");
         gl = canvas.getContext('experimental-webgl')
     if (!gl)
-        alert("no webgl. old browser?")
+        //alert("no webgl. old browser?")
 
     //canvas.width = window.innerWidth;
     //canvas.height = window.innerHeight;

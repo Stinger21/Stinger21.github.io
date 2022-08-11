@@ -121,7 +121,7 @@ function RunDemo(vertexShaderText, fragmentShaderText, model, Texture)
     if (!gl)
         console.error("webgl not supported, falling back on experimental");
         gl = canvas.getContext('experimental-webgl')
-    if (!gl)
+    //if (!gl)
         //alert("no webgl. old browser?")
 
     //canvas.width = window.innerWidth;
